@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env.local
+
+# Video outputs & temp caches
+temp/
+outputs/
+*.mp4
+!assets/backgrounds/*.mp4
+*.caption.txt
+
+# OS artifacts
+Thumbs.db
+Desktop.ini
+.DS_Store

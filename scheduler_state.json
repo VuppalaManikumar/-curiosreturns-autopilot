@@ -1,0 +1,44 @@
+{
+  "history": {
+    "2026-10-27": {
+      "day_name": "Tuesday",
+      "theme_title": "Secret AI Tools That Feel Illegal",
+      "style_tag": "TECH_TUESDAY",
+      "slots": {
+        "slot_1": {
+          "name": "Morning Commute Launchpad",
+          "target_time": "08:30",
+          "niche": "stoic_wisdom",
+          "done": true,
+          "completed_at": "2026-10-27 15:37:00",
+          "video_file": "20261027_142750_Rule_of_the_Unseen_Move.mp4"
+        },
+        "slot_2": {
+          "name": "Midday Viral Drop",
+          "target_time": "12:30",
+          "niche": "ai_glitches",
+          "done": true,
+          "completed_at": "2026-10-27 16:30:00",
+          "video_file": "20261027_163001_The_Disarming_Pause.mp4"
+        },
+        "slot_3": {
+          "name": "Evening Curiosity Peak",
+          "target_time": "17:30",
+          "niche": "mind_facts",
+          "done": true,
+          "completed_at": "2026-10-27 18:32:18",
+          "video_file": "20261027_183204_The_Terrifying_Silence_of_Space.mp4"
+        },
+        "slot_4": {
+          "name": "Late Night Deep Binge",
+          "target_time": "21:00",
+          "niche": "wealth_secrets",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        }
+      }
+    }
+  },
+  "total_published": 1
+}
