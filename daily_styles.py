@@ -108,8 +108,8 @@ DAILY_SLOTS = [
     {
         "slot_id": "slot_5",
         "target_time": "14:15",
-        "name": "Post-Lunch Wealth Hack",
-        "niche_bias": "wealth_secrets"
+        "name": "Legendary Indian Heroes & Warriors",
+        "niche_bias": "indian_heroes"
     },
     {
         "slot_id": "slot_6",

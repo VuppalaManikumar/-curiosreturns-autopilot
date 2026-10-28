@@ -55,8 +55,9 @@ def run_single_pipeline(preferred_niche="random", voice=None, highlight_color=No
     
     # 2. Voiceover & Karaoke Subtitles with Dynamic Daily Palette
     print("--- [Step 1/3] Synthesizing Neural Audio & Glowing Subtitles ---")
-    active_color = highlight_color or "&H0024E0FB"
-    generate_voiceover(script_text, audio_path, ass_path, voice=voice, highlight_color=active_color)
+    active_voice = script_data.get("voice") or voice or "en-US-ChristopherNeural"
+    active_color = script_data.get("subtitle_color") or highlight_color or "&H0024E0FB"
+    generate_voiceover(script_text, audio_path, ass_path, voice=active_voice, highlight_color=active_color)
     
     # 3. Video Rendering with Micro-Zoom Retention
     print("\n--- [Step 2/3] Rendering 9:16 Video (Micro-Zoom & Sub-Bass Audio) ---")

@@ -142,6 +142,72 @@ VIRAL_LIBRARY = [
         "loop_bridge": "...unstoppable is knowing that... Whatever burns down in your life is simply fuel for your next chapter.",
         "caption": "Turn adversity into pure power. 🐺🏛️ Drop a 🔥 if you live by Amor Fati.\n.\n#stoicism #resilience #sigma #innerstrength #amorfati #marcusaurelius #curiosreturns",
         "pinned_comment": "🏛️ The Stoic Mastery Blueprint: Claim your free copy via bio! 📜"
+    },
+
+    # --- 7. LEGENDARY INDIAN HEROES & UNSUNG WARRIORS ---
+    {
+        "niche": "indian_heroes",
+        "title": "The Mughal Nightmare Shivaji",
+        "script": "The Mughal Empire had fifty times more soldiers, but they were terrified of one man. Chhatrapati Shivaji Maharaj mastered guerrilla warfare, striking from the mountain mist before vanishing into the Sahyadri ranges. He built India's first modern navy with over three hundred warships to guard our coastlines from foreign invaders. And the legendary reason why his name still inspires millions today is that...",
+        "loop_bridge": "...inspires millions today is that... The Mughal Empire had fifty times more soldiers, but they were terrified of one man.",
+        "caption": "The Father of the Indian Navy and master of guerrilla warfare. 🚩⚔️\n\nType 'JAI SHIVAJI' if you honor his timeless legacy!\n📌 SAVE and SHARE this heroic tribute.\nFollow @curiosreturns for daily epic Indian history & heroes.\n.\n#shivajimaharaj #marathaempire #indianhistory #heroesofindia #warriors #bharat #chhatrapatishivajimaharaj #historyfacts #reelsindia #curiosreturns",
+        "pinned_comment": "🚩 Har Har Mahadev! Follow @curiosreturns to honor India's greatest heroes daily! 🇮🇳✨"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "Maharana Pratap and Chetak",
+        "script": "Emperor Akbar offered him half the subcontinent if he would only bow his head. Maharana Pratap refused, choosing to eat bread made from grass in the Aravali jungles rather than surrender his self-respect. In the battle of Haldighati, his loyal warhorse Chetak leaped onto an armored elephant to protect him despite fatal wounds. And the reason why no empire could ever crush Mewar's spirit was that...",
+        "loop_bridge": "...crush Mewar's spirit was that... Emperor Akbar offered him half the subcontinent if he would only bow his head.",
+        "caption": "The warrior king who never bowed to any emperor. ⚔️🛡️\n\nDrop a 🚩 to salute the unmatched courage of Maharana Pratap & Chetak!\n.\n#maharanapratap #chetak #rajputwarriors #indianhistory #bravery #haldighati #bharatkeveer #historicalfacts #curiosreturns",
+        "pinned_comment": "🇮🇳 Real heroes never bow down. Follow @curiosreturns for untold stories of Indian legends! 📜"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "The Escape of Netaji Bose",
+        "script": "The British Empire considered him their single most dangerous adversary. Netaji Subhash Chandra Bose executed the greatest escape in history, slipping past British intelligence in disguise through Kabul, Moscow, and Berlin. He built the Azad Hind Fauj of forty thousand soldiers to wage open war for India's freedom. And the chilling secret why British rule finally collapsed in India was that...",
+        "loop_bridge": "...finally collapsed in India was that... The British Empire considered him their single most dangerous adversary.",
+        "caption": "Give me blood, and I will give you freedom! 🇮🇳🔥\n\nDrop a 'JAI HIND' in the comments to honor Netaji Subhash Chandra Bose!\n.\n#netaji #subhashchandrabose #azadhindfauj #freedomfighters #indianhistory #jaihind #patriotism #reelsviral #curiosreturns",
+        "pinned_comment": "🔥 Inquilab Zindabad! Share this tribute to Netaji with every proud Indian! 🇮🇳"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "The Smiling Martyr Bhagat Singh",
+        "script": "He walked to the gallows smiling with a book in his hand. Shaheed Bhagat Singh was only twenty-three years old when the British executed him in total secret before dawn. When offered a final pardon, he refused to apologize, proving that you can kill a revolutionary, but you cannot kill an idea. And the undeniable reason why his courage shook the entire empire was that...",
+        "loop_bridge": "...shook the entire empire was that... He walked to the gallows smiling with a book in his hand.",
+        "caption": "Executed at 23, immortal forever. 🕊️🇮🇳\n\nType 'INQUILAB' if you are inspired by Bhagat Singh's fearless soul.\n.\n#bhagatsingh #shaheedbhagatsingh #inquilabzindabad #freedomfighters #bharat #youthpower #legendsofindia #curiosreturns",
+        "pinned_comment": "🇮🇳 Ideas never die. Save this reel to remember true courage. 📌"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "Captain Vikram Batra Kargil 1999",
+        "script": "His radio code name struck pure terror into enemy bunkers on Point 4875. Captain Vikram Batra was nicknamed Shershah during the Kargil War of 1999. Ordered to recapture vertical peak 5140 at seventeen thousand feet, he charged through machine gun fire, roaring 'Yeh Dil Maange More'. He saved his injured junior officer before taking a fatal bullet, proving that...",
+        "loop_bridge": "...taking a fatal bullet, proving that... His radio code name struck pure terror into enemy bunkers on Point 4875.",
+        "caption": "Yeh Dil Maange More! 🎖️🇮🇳 Saluting Param Vir Chakra Captain Vikram Batra.\n\nDrop a ❤️ for our brave Indian Armed Forces!\n.\n#vikrambatra #shershah #kargilwar #paramvirchakra #indianarmy #indianheroes #jaihind #bharat #curiosreturns",
+        "pinned_comment": "🇮🇳 The brave die never. Salute to our soldiers! Follow @curiosreturns for daily bravery reels. 🎖️"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "Rani Lakshmibai of Jhansi",
+        "script": "She rode onto the battlefield with her young son tied firmly to her back. When the British ordered her to surrender Jhansi, Rani Lakshmibai drew two swords and declared 'I shall not give up my Jhansi.' She fought entire British battalions hand-to-hand on horseback until her final breath. And the legendary fire that ignited the 1857 freedom uprising began when...",
+        "loop_bridge": "...freedom uprising began when... She rode onto the battlefield with her young son tied firmly to her back.",
+        "caption": "Khoob Ladi Mardani Woh Toh Jhansi Wali Rani Thi! ⚔️👑\n\nSalute to the warrior queen who terrified the British Empire!\n.\n#ranilakshmibai #jhansi #warriorqueen #womenofindia #1857revolt #indianhistory #bravery #curiosreturns",
+        "pinned_comment": "👑 Courage has no gender. Tap follow to honor the fierce queens of Bharat! 🇮🇳✨"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "APJ Abdul Kalam The Peoples President",
+        "script": "He sold morning newspapers on the streets to pay for his school books. Dr. APJ Abdul Kalam failed his childhood dream of becoming a fighter pilot by just one rank. Instead of giving up, he built India's indigenous satellite rockets and the Agni missile defense shield with total self-reliance. And the inspiring reason why he is loved by every Indian is that...",
+        "loop_bridge": "...loved by every Indian is that... He sold morning newspapers on the streets to pay for his school books.",
+        "caption": "From selling newspapers to becoming the Missile Man of India. 🚀📖\n\nWhat is your favorite quote by Dr. Kalam? Drop it below!\n.\n#apjabdulkalam #missileman #inspiration #dreambig #indianheroes #scienceandtech #isro #curiosreturns",
+        "pinned_comment": "✨ Dream is not that which you see while sleeping, it is something that does not let you sleep. 🇮🇳"
+    },
+    {
+        "niche": "indian_heroes",
+        "title": "Baji Prabhu The Spartan of Bharat",
+        "script": "Three hundred Marathas stood firm against an advancing army of ten thousand men. In 1660, Baji Prabhu Deshpande guarded the narrow mountain pass of Ghodkhind so Shivaji Maharaj could reach safety. Struck by dozens of enemy swords, he refused to collapse until he heard five cannon shots echoing from the fort. And the reason history calls this the Indian Battle of Thermopylae is that...",
+        "loop_bridge": "...Thermopylae is that... Three hundred Marathas stood firm against an advancing army of ten thousand men.",
+        "caption": "The supreme sacrifice of Baji Prabhu Deshpande at Pavan Khind. ⚔️🚩\n\n300 held off 10,000. True warrior blood.\n.\n#pavankhind #marathawarriors #bajiprabhu #indianhistory #bravery #sacrifice #bharat #curiosreturns",
+        "pinned_comment": "🚩 Unmatched valor. Follow @curiosreturns to discover untold Indian battle epics! 📜"
     }
 ]
 
@@ -243,14 +309,22 @@ def get_next_script(preferred_niche="random"):
         
     chosen = random.choice(candidates).copy()
     record_used_content(title=chosen["title"], niche=chosen["niche"])
+    
+    # Custom epic Indian voice & Saffron palette for Indian heroes
+    if chosen.get("niche") == "indian_heroes":
+        chosen["voice"] = "en-IN-PrabhatNeural"
+        chosen["subtitle_color"] = "&H0000A5FF"
+        
     print(f"[*] Selected UNSEEN seamless loop script: '{chosen['title']}' [Niche: {chosen['niche']}]")
     if "loop_bridge" in chosen:
         print(f"    [LOOP CONNECTION]: \"{chosen['loop_bridge']}\"")
     return chosen
 
 if __name__ == "__main__":
-    s = get_next_script("daily_news")
-    print("\nGenerated Script:")
+    s = get_next_script("indian_heroes")
+    print("\n--- TEST INDIAN HEROES REEL ---")
     print("Title:", s.get("title"))
+    print("Voice:", s.get("voice"))
+    print("Color:", s.get("subtitle_color"))
     print("Script:", s.get("script"))
     print("Loop Bridge:", s.get("loop_bridge"))
