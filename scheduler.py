@@ -57,7 +57,10 @@ def init_today_state(state: dict) -> dict:
             "style_tag": today_style["style_tag"],
             "slots": {}
         }
-        for slot in DAILY_SLOTS:
+    
+    # Ensure all daily slots (e.g. 10 slots) are registered
+    for slot in DAILY_SLOTS:
+        if slot["slot_id"] not in state["history"][today_key]["slots"]:
             state["history"][today_key]["slots"][slot["slot_id"]] = {
                 "name": slot["name"],
                 "target_time": slot["target_time"],
@@ -66,7 +69,7 @@ def init_today_state(state: dict) -> dict:
                 "completed_at": None,
                 "video_file": None
             }
-        save_state(state)
+    save_state(state)
     return state
 
 def time_to_minutes(time_str: str) -> int:
@@ -159,7 +162,7 @@ def force_run_next():
             print(f"[OK] Slot {s_id} complete!")
             return
             
-    print("[i] All 4 slots for today are already completed! Amazing job.")
+    print(f"[i] All {len(DAILY_SLOTS)} slots for today are already completed! Amazing job.")
 
 def print_status(today_data=None, today_style=None, now_minutes=None):
     if not today_data:
@@ -170,9 +173,9 @@ def print_status(today_data=None, today_style=None, now_minutes=None):
         now = datetime.now()
         now_minutes = now.hour * 60 + now.minute
 
-    print("\n" + "-" * 68)
-    print(f"  TODAY'S 4 POSTING SLOTS STATUS ({today_style['day_name']} - {today_style['theme_title']}):")
-    print("-" * 68)
+    print("\n" + "-" * 72)
+    print(f"  TODAY'S {len(DAILY_SLOTS)} POSTING SLOTS STATUS ({today_style['day_name']} - {today_style['theme_title']}):")
+    print("-" * 72)
     
     for slot in DAILY_SLOTS:
         s_id = slot["slot_id"]

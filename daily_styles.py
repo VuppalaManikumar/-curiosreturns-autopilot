@@ -79,30 +79,66 @@ def get_today_style() -> Dict[str, Any]:
     weekday = datetime.now().weekday()
     return DAILY_STYLES.get(weekday, DAILY_STYLES[0])
 
-# 4 Daily Posting Slots (Engineered for Global Peak Traffic Waves)
+# 10 Daily Posting Slots (Maximized for 24/7 Global High-Retention Reach)
 DAILY_SLOTS = [
     {
         "slot_id": "slot_1",
-        "target_time": "08:30",
-        "name": "Morning Commute Launchpad",
-        "niche_bias": "stoic_wisdom"  # Morning discipline/motivation
+        "target_time": "07:30",
+        "name": "Morning Awakening",
+        "niche_bias": "stoic_wisdom"
     },
     {
         "slot_id": "slot_2",
-        "target_time": "12:30",
-        "name": "Midday Viral Drop",
-        "niche_bias": "ai_glitches"    # Lunchtime tech tools & shortcuts
+        "target_time": "09:00",
+        "name": "Commute Ignition",
+        "niche_bias": "dark_psychology"
     },
     {
         "slot_id": "slot_3",
-        "target_time": "17:30",
-        "name": "Evening Curiosity Peak",
-        "niche_bias": "mind_facts"     # Evening mind-blowing facts
+        "target_time": "10:45",
+        "name": "Mid-Morning AI Shortcut",
+        "niche_bias": "ai_glitches"
     },
     {
         "slot_id": "slot_4",
-        "target_time": "21:00",
+        "target_time": "12:30",
+        "name": "Midday Viral Drop",
+        "niche_bias": "mind_facts"
+    },
+    {
+        "slot_id": "slot_5",
+        "target_time": "14:15",
+        "name": "Post-Lunch Wealth Hack",
+        "niche_bias": "wealth_secrets"
+    },
+    {
+        "slot_id": "slot_6",
+        "target_time": "16:00",
+        "name": "Afternoon Mind Glitch",
+        "niche_bias": "dark_psychology"
+    },
+    {
+        "slot_id": "slot_7",
+        "target_time": "17:45",
+        "name": "Evening Curiosity Peak",
+        "niche_bias": "mind_facts"
+    },
+    {
+        "slot_id": "slot_8",
+        "target_time": "19:30",
+        "name": "Prime Time AI Wave",
+        "niche_bias": "ai_glitches"
+    },
+    {
+        "slot_id": "slot_9",
+        "target_time": "21:15",
         "name": "Late Night Deep Binge",
-        "niche_bias": "wealth_secrets" # Late night money & dark psychology
+        "niche_bias": "wealth_secrets"
+    },
+    {
+        "slot_id": "slot_10",
+        "target_time": "23:00",
+        "name": "Midnight Thought Loop",
+        "niche_bias": "stoic_wisdom"
     }
 ]

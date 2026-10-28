@@ -38,6 +38,93 @@
           "video_file": null
         }
       }
+    },
+    "2026-10-28": {
+      "day_name": "Wednesday",
+      "theme_title": "Dark Psychology & Power Laws",
+      "style_tag": "PSYCHOLOGY_WEDNESDAY",
+      "slots": {
+        "slot_1": {
+          "name": "Morning Awakening",
+          "target_time": "07:30",
+          "niche": "stoic_wisdom",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_2": {
+          "name": "Commute Ignition",
+          "target_time": "09:00",
+          "niche": "dark_psychology",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_3": {
+          "name": "Mid-Morning AI Shortcut",
+          "target_time": "10:45",
+          "niche": "ai_glitches",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_4": {
+          "name": "Midday Viral Drop",
+          "target_time": "12:30",
+          "niche": "mind_facts",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_5": {
+          "name": "Post-Lunch Wealth Hack",
+          "target_time": "14:15",
+          "niche": "wealth_secrets",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_6": {
+          "name": "Afternoon Mind Glitch",
+          "target_time": "16:00",
+          "niche": "dark_psychology",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_7": {
+          "name": "Evening Curiosity Peak",
+          "target_time": "17:45",
+          "niche": "mind_facts",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_8": {
+          "name": "Prime Time AI Wave",
+          "target_time": "19:30",
+          "niche": "ai_glitches",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_9": {
+          "name": "Late Night Deep Binge",
+          "target_time": "21:15",
+          "niche": "wealth_secrets",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        },
+        "slot_10": {
+          "name": "Midnight Thought Loop",
+          "target_time": "23:00",
+          "niche": "stoic_wisdom",
+          "done": false,
+          "completed_at": null,
+          "video_file": null
+        }
+      }
     }
   },
   "total_published": 1

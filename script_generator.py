@@ -98,6 +98,48 @@ VIRAL_LIBRARY = [
         "loop_bridge": "...bulletproof is knowing that... Marcus Aurelius wrote that you have power over your mind, not outside events.",
         "caption": "Protect your inner peace at all costs. 🏛️⚡ Drop a 💯 if you agree.\n.\n#stoicism #marcusaurelius #stoicmindset #discipline #innerpeace #dailymotivation #wisdom #philosophy #sigma #curiosreturns",
         "pinned_comment": "🏛️ The Stoic Blueprint: Free reading list and daily laws linked in bio! 📜"
+    },
+
+    # --- 6. EXPANDED VAULT FOR 10X DAILY REACH ---
+    {
+        "niche": "wealth_secrets",
+        "title": "The Velocity of Capital",
+        "script": "Poor people hoard money, middle class people spend money, but the wealthy accelerate money. If a dollar sits idle, it loses value every minute to monetary debasement. Elite investors recycle the same dollar into multiple cash-flowing assets simultaneously. And the reason why compound interest only benefits the ultra-rich is that...",
+        "loop_bridge": "...the ultra-rich is that... Poor people hoard money, middle class people spend money.",
+        "caption": "Money is energy. If it doesn't move, it dies. 💸⚡ Save this financial law!\n.\n#moneyrules #investing #wealthbuilding #financialfreedom #smartmoney #curiosreturns",
+        "pinned_comment": "📈 Want to understand cash flow velocity? Free guide in our bio! 🔗"
+    },
+    {
+        "niche": "dark_psychology",
+        "title": "The Triangle Gaze Technique",
+        "script": "To instantly project magnetic charisma without saying a word, use the golden triangle gaze. When looking at someone, drift your eyes from their left eye, to their right eye, then down to their lips, and back up. This activates subconscious attraction and intense authority in human psychology. And the reason people feel captivated by you is because...",
+        "loop_bridge": "...captivated by you is because... To instantly project magnetic charisma without saying a word, use the golden triangle gaze.",
+        "caption": "Master silent magnetism in conversation. 👁️♟️ Save this technique.\n.\n#charisma #bodylanguage #darkpsychology #confidence #socialskills #curiosreturns",
+        "pinned_comment": "♟️ Master the unseen laws of human magnetism. Bio link for the full list! 📚"
+    },
+    {
+        "niche": "ai_glitches",
+        "title": "The 60 Second Website Glitch",
+        "script": "Web designers hate this one AI tool because it builds an entire responsive business website in sixty seconds. You simply type your business idea, and it writes the sales copy, sources full HD imagery, and wires payments automatically. It turns a ten thousand dollar project into zero dollars, proving that...",
+        "loop_bridge": "...into zero dollars, proving that... Web designers hate this one AI tool because it builds an entire responsive website.",
+        "caption": "Stop paying agencies thousands for simple websites. 🤖⚡ Save this before it gets taken down!\n.\n#aitools #webdesign #freelancehacks #sidehustle #digitalbusiness #curiosreturns",
+        "pinned_comment": "🚀 100+ Free AI shortcuts in our bio database! Tap the link now! 📲"
+    },
+    {
+        "niche": "mind_facts",
+        "title": "The Greenland Shark Longevity",
+        "script": "Deep beneath the Arctic ice swims a creature born before the American Revolution. The Greenland shark can live for over four hundred years in total darkness, with a heartbeat of just one pulse every twelve seconds. They don't even reach adulthood until they are one hundred and fifty years old, which means...",
+        "loop_bridge": "...means... Deep beneath the Arctic ice swims a creature born before the American Revolution.",
+        "caption": "Swimming through time since the 1600s. 🦈❄️ What would you do with 400 years?\n.\n#oceanfacts #mindblown #ancientcreatures #arctic #biology #curiosreturns",
+        "pinned_comment": "🌊 Daily bizarre ocean & science curiosities. Tap follow! ✨"
+    },
+    {
+        "niche": "stoic_wisdom",
+        "title": "The Amor Fati Shield",
+        "script": "Whatever burns down in your life is simply fuel for your next chapter. The ancient stoics lived by Amor Fati: loving your fate, no matter how brutal it feels. When a plan fails, you don't mourn, you adapt and attack from a higher angle. Because the only way to become truly unstoppable is knowing that...",
+        "loop_bridge": "...unstoppable is knowing that... Whatever burns down in your life is simply fuel for your next chapter.",
+        "caption": "Turn adversity into pure power. 🐺🏛️ Drop a 🔥 if you live by Amor Fati.\n.\n#stoicism #resilience #sigma #innerstrength #amorfati #marcusaurelius #curiosreturns",
+        "pinned_comment": "🏛️ The Stoic Mastery Blueprint: Claim your free copy via bio! 📜"
     }
 ]
 
