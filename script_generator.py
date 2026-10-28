@@ -2,7 +2,8 @@ import random
 import requests
 import json
 from config import get_config
-from news_engine import build_news_reel_script, fetch_trending_headlines
+from news_engine import build_news_reel_script, fetch_fresh_breaking_headline
+from history_registry import is_title_used, record_used_content, get_last_niche
 
 # =========================================================================
 # SEAMLESS INFINITE LOOP SCRIPT VAULT (OUROBOROS ARCHITECTURE)
@@ -195,21 +196,31 @@ def generate_script_with_ai(niche: str, api_key: str):
 
 def get_next_script(preferred_niche="random"):
     gemini_key = get_config("GEMINI_API_KEY", "").strip()
+    last_niche = get_last_niche()
     
     available_niches = ["daily_news", "wealth_secrets", "ai_glitches", "dark_psychology", "mind_facts", "stoic_wisdom"]
+    
     if preferred_niche == "random":
-        niche = random.choices(
-            available_niches,
-            weights=[30, 20, 20, 15, 10, 5],
-            k=1
-        )[0]
+        # Strictly ensure consecutive videos NEVER share the same niche!
+        valid_niches = [n for n in available_niches if n != last_niche]
+        niche = random.choice(valid_niches) if valid_niches else random.choice(available_niches)
     else:
         niche = preferred_niche
         
-    # Real-Time Daily Breaking News & Information
-    if niche == "daily_news":
-        print("[*] Fetching real-time breaking news headline for Daily News Reel...")
-        news_reel = build_news_reel_script()
+    print(f"[*] Content Strategy: Rotating to niche '{niche}' (Previous: '{last_niche or 'None'}')")
+
+    # Real-Time Daily Breaking News & Information (Guaranteed 100% Unique Stories)
+    if niche.startswith("daily_news"):
+        cat = "ALL"
+        if "world" in niche:
+            cat = "WORLD"
+        elif "science" in niche:
+            cat = "SCIENCE"
+        elif "tech" in niche:
+            cat = "TECH"
+            
+        print(f"[*] Sourcing fresh, unseen breaking news headline for [{cat}] News Brief...")
+        news_reel = build_news_reel_script(preferred_category=cat)
         if news_reel:
             print(f"[*] Generated Real-Time News Reel: '{news_reel['title']}'")
             print(f"    [LOOP CONNECTION]: \"{news_reel['loop_bridge']}\"")
@@ -218,14 +229,21 @@ def get_next_script(preferred_niche="random"):
     if gemini_key:
         print(f"[*] Generating seamless infinite loop AI script for '{niche}' via Gemini...")
         ai_script = generate_script_with_ai(niche, gemini_key)
-        if ai_script:
+        if ai_script and not is_title_used(ai_script.get("title", "")):
+            record_used_content(title=ai_script["title"], niche=niche)
             return ai_script
             
-    candidates = [item for item in VIRAL_LIBRARY if item["niche"] == niche]
+    # Deduplicate against history registry
+    candidates = [item for item in VIRAL_LIBRARY if item["niche"] == niche and not is_title_used(item["title"])]
+    if not candidates:
+        print(f"[i] All scripts in '{niche}' have been shown. Recycling unseen library scripts...")
+        candidates = [item for item in VIRAL_LIBRARY if not is_title_used(item["title"])]
     if not candidates:
         candidates = VIRAL_LIBRARY
+        
     chosen = random.choice(candidates).copy()
-    print(f"[*] Selected seamless loop script: '{chosen['title']}' [Niche: {chosen['niche']}]")
+    record_used_content(title=chosen["title"], niche=chosen["niche"])
+    print(f"[*] Selected UNSEEN seamless loop script: '{chosen['title']}' [Niche: {chosen['niche']}]")
     if "loop_bridge" in chosen:
         print(f"    [LOOP CONNECTION]: \"{chosen['loop_bridge']}\"")
     return chosen

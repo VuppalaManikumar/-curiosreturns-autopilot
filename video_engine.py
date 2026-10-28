@@ -15,16 +15,31 @@ def get_media_duration(file_path: Path) -> float:
         return int(h) * 3600 + int(m) * 60 + float(s)
     return 30.0
 
+CINEMATIC_GRADES = [
+    {"name": "Cyberpunk Neon", "filter": "eq=contrast=1.18:brightness=-0.04:saturation=1.35"},
+    {"name": "Film Noir", "filter": "eq=contrast=1.22:saturation=0.55:brightness=-0.06"},
+    {"name": "Golden Hour", "filter": "eq=contrast=1.12:gamma_r=1.22:gamma_b=0.88:saturation=1.25"},
+    {"name": "Matrix Emerald", "filter": "eq=contrast=1.15:gamma_g=1.25:gamma_r=0.92:gamma_b=0.92"},
+    {"name": "Midnight Deep Blue", "filter": "eq=contrast=1.14:gamma_b=1.25:gamma_r=0.88:gamma_g=0.95"},
+    {"name": "Ultra Vivid Pop", "filter": "eq=contrast=1.25:saturation=1.55:brightness=-0.02"},
+    {"name": "Studio Crisp", "filter": "eq=contrast=1.10:brightness=-0.05:saturation=1.10"},
+    {"name": "Solar Amber", "filter": "eq=contrast=1.28:gamma_r=1.25:gamma_b=0.80:saturation=1.15"}
+]
+
 def build_multiscene_background(duration: float, output_path: Path) -> Path:
     """
-    Builds a dynamic multi-scene B-Roll montage that cuts between different
-    high-energy visual backgrounds every 3.5 to 5.0 seconds.
-    Resets viewer dopamine and keeps eyes locked to the screen.
+    Builds a dynamic multi-scene B-Roll montage with unique color grading,
+    mirror flips, random offsets, and speed variations so every single video
+    has a 100% NEW, never-repeated visual atmosphere!
     """
     exe = get_ffmpeg_binary()
     supported_exts = {".mp4", ".mov", ".mkv", ".webm"}
     clips = [f for f in BACKGROUNDS_DIR.iterdir() if f.is_file() and f.suffix.lower() in supported_exts]
     
+    # Pick a fresh cinematic color grade treatment for this video
+    chosen_grade = random.choice(CINEMATIC_GRADES)
+    print(f"[*] Applying New Visual Style: '{chosen_grade['name']}' color grade + dynamic scene cuts")
+
     if not clips:
         # Fallback procedural if folder is empty
         cmd = [
@@ -39,8 +54,8 @@ def build_multiscene_background(duration: float, output_path: Path) -> Path:
         subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True)
         return output_path
 
-    # Calculate scenes: cut every 4.0 seconds
-    scene_duration = 4.0
+    # Calculate scenes: cut every 3.5 to 4.5 seconds for high dopamine reset
+    scene_duration = random.choice([3.5, 4.0, 4.2])
     num_scenes = max(1, int(duration // scene_duration) + (1 if duration % scene_duration > 0 else 0))
     
     print(f"[*] Assembling Dynamic Multi-Scene Montage: {num_scenes} visual cuts across {len(clips)} background assets...")
@@ -61,7 +76,6 @@ def build_multiscene_background(duration: float, output_path: Path) -> Path:
         
     filter_parts = []
     for i in range(num_scenes):
-        # Calculate duration of this slice (last slice matches remainder)
         if i == num_scenes - 1:
             slice_dur = duration - (i * scene_duration)
             if slice_dur <= 0:
@@ -69,15 +83,17 @@ def build_multiscene_background(duration: float, output_path: Path) -> Path:
         else:
             slice_dur = scene_duration
             
-        # Random start offset between 0 and 15 seconds so different portions of footage are used
-        random_start = random.randint(0, 10)
+        # Random start offset between 0 and 20 seconds so entirely different footage sections play
+        random_start = random.randint(0, 18)
+        # Random horizontal mirror flip so orientation is fresh
+        hflip = ",hflip" if random.random() > 0.5 else ""
         
-        # Scale, crop to 9:16 vertical, and trim slice
         filter_parts.append(
             f"[{i}:v]trim=start={random_start}:duration={slice_dur:.2f},"
             f"setpts=PTS-STARTPTS,"
             f"scale=1080:1920:force_original_aspect_ratio=increase,"
-            f"crop=1080:1920[v{i}]"
+            f"crop=1080:1920{hflip},"
+            f"{chosen_grade['filter']}[v{i}]"
         )
         
     concat_inputs = "".join(f"[v{i}]" for i in range(num_scenes))
@@ -92,6 +108,12 @@ def build_multiscene_background(duration: float, output_path: Path) -> Path:
         "-pix_fmt", "yuv420p",
         str(output_path)
     ])
+    
+    proc = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True, errors="replace")
+    if proc.returncode != 0:
+        raise RuntimeError(f"Multi-scene montage render failed:\n{proc.stderr}")
+        
+    return output_path
     
     proc = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True, errors="replace")
     if proc.returncode != 0:
