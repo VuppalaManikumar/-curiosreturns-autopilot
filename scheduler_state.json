@@ -48,65 +48,65 @@
           "name": "Morning Awakening",
           "target_time": "07:30",
           "niche": "stoic_wisdom",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:49:49",
+          "video_file": "20261028_204928_The_Amor_Fati_Shield.mp4"
         },
         "slot_2": {
           "name": "Commute Ignition",
           "target_time": "09:00",
           "niche": "dark_psychology",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:50:15",
+          "video_file": "20261028_204953_Today's_Brief_Israel_Election_Results_Live_Updates_Ex....mp4"
         },
         "slot_3": {
           "name": "Mid-Morning AI Shortcut",
           "target_time": "10:45",
           "niche": "ai_glitches",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:50:46",
+          "video_file": "20261028_205018_The_Reverse_ChatGPT_Prompt.mp4"
         },
         "slot_4": {
           "name": "Midday Viral Drop",
           "target_time": "12:30",
           "niche": "mind_facts",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:50:59",
+          "video_file": "20261028_205049_The_Terrifying_Silence_of_Space.mp4"
         },
         "slot_5": {
           "name": "Post-Lunch Wealth Hack",
           "target_time": "14:15",
           "niche": "wealth_secrets",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:51:33",
+          "video_file": "20261028_205102_Rani_Lakshmibai_of_Jhansi.mp4"
         },
         "slot_6": {
           "name": "Afternoon Mind Glitch",
           "target_time": "16:00",
           "niche": "dark_psychology",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:52:06",
+          "video_file": "20261028_205137_Today's_Brief_A_dinosaur_fossil_that_looks_like_a_mini....mp4"
         },
         "slot_7": {
           "name": "Evening Curiosity Peak",
           "target_time": "17:45",
           "niche": "mind_facts",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:52:47",
+          "video_file": "20261028_205209_The_Greenland_Shark_Longevity.mp4"
         },
         "slot_8": {
           "name": "Prime Time AI Wave",
           "target_time": "19:30",
           "niche": "ai_glitches",
-          "done": false,
-          "completed_at": null,
-          "video_file": null
+          "done": true,
+          "completed_at": "2026-10-28 20:53:21",
+          "video_file": "20261028_205252_Today's_Brief_Apple's_iPhone_Duo_is_getting_roasted_ov....mp4"
         },
         "slot_9": {
           "name": "Late Night Deep Binge",
@@ -127,5 +127,5 @@
       }
     }
   },
-  "total_published": 1
+  "total_published": 9
 }

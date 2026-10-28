@@ -165,3 +165,4 @@ def publish_video(video_path: Path, base_caption: str, pinned_comment: str = "")
     print(f"  Instagram Reels: {'[POSTED LIVE]' if posted_ig else '[FAILED]'}")
     print(f"  Video file:      {video_path.name}")
     print("=======================================================\n")
+    return posted_fb, posted_ig

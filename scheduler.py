@@ -110,22 +110,32 @@ def check_and_execute_slots():
                 
             try:
                 # Produce video with today's dynamic style parameters
-                video_path = run_single_pipeline(
+                video_res = run_single_pipeline(
                     preferred_niche=slot["niche_bias"],
                     voice=today_style["voice"],
                     highlight_color=today_style["subtitle_color"],
                     custom_marketing_hook=today_style["marketing_hook"]
                 )
                 
-                # Mark as completed
-                slot_data["done"] = True
-                slot_data["completed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                slot_data["video_file"] = video_path.name
-                state["total_published"] = state.get("total_published", 0) + 1
-                save_state(state)
-                executed_any = True
+                if isinstance(video_res, tuple):
+                    video_path, upload_success = video_res
+                else:
+                    video_path, upload_success = video_res, True
                 
-                log(f"[OK] Slot '{s_id}' completed and broadcasted successfully to Facebook & Instagram: {video_path.name}")
+                if upload_success:
+                    slot_data["done"] = True
+                    slot_data["completed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    slot_data["video_file"] = video_path.name
+                    state["total_published"] = state.get("total_published", 0) + 1
+                    save_state(state)
+                    executed_any = True
+                    log(f"[OK] Slot '{s_id}' completed and broadcasted successfully to Facebook & Instagram: {video_path.name}")
+                else:
+                    slot_data["done"] = False
+                    slot_data["video_file"] = video_path.name
+                    save_state(state)
+                    log(f"[!] Slot '{s_id}' video created ({video_path.name}), but UPLOAD REJECTED BY META: Access Token has expired!")
+                
                 time.sleep(3)
             except Exception as e:
                 log(f"[ERROR] Failed executing slot '{s_id}': {e}")
@@ -148,18 +158,29 @@ def force_run_next():
         slot_data = today_data["slots"].get(s_id, {})
         if not slot_data.get("done", False):
             print(f"\n[+] Force-executing: {slot['name']} ({slot['target_time']})...")
-            video_path = run_single_pipeline(
+            video_res = run_single_pipeline(
                 preferred_niche=slot["niche_bias"],
                 voice=today_style["voice"],
                 highlight_color=today_style["subtitle_color"],
                 custom_marketing_hook=today_style["marketing_hook"]
             )
-            slot_data["done"] = True
-            slot_data["completed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            slot_data["video_file"] = video_path.name
-            state["total_published"] = state.get("total_published", 0) + 1
-            save_state(state)
-            print(f"[OK] Slot {s_id} complete!")
+            if isinstance(video_res, tuple):
+                video_path, upload_success = video_res
+            else:
+                video_path, upload_success = video_res, True
+
+            if upload_success:
+                slot_data["done"] = True
+                slot_data["completed_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                slot_data["video_file"] = video_path.name
+                state["total_published"] = state.get("total_published", 0) + 1
+                save_state(state)
+                print(f"[OK] Slot {s_id} complete and published!")
+            else:
+                slot_data["done"] = False
+                slot_data["video_file"] = video_path.name
+                save_state(state)
+                print(f"[!] Slot {s_id} video generated ({video_path.name}), but Meta upload failed due to expired token.")
             return
             
     print(f"[i] All {len(DAILY_SLOTS)} slots for today are already completed! Amazing job.")

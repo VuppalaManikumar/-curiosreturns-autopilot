@@ -65,7 +65,7 @@ def run_single_pipeline(preferred_niche="random", voice=None, highlight_color=No
     
     # 4. Meta Dual-Publishing (Facebook Page & Instagram Reels)
     print("\n--- [Step 3/3] Delivering High-Conversion Marketing Content ---")
-    publish_video(output_video, caption, pinned_comment)
+    posted_fb, posted_ig = publish_video(output_video, caption, pinned_comment)
     
     # Clean up temp files
     for temp_f in [audio_path, ass_path]:
@@ -77,7 +77,7 @@ def run_single_pipeline(preferred_niche="random", voice=None, highlight_color=No
                 
     elapsed = time.time() - start_time
     print(f"[OK] Completed '{title}' in {elapsed:.1f}s -> {output_video.name}")
-    return output_video
+    return output_video, (posted_fb or posted_ig)
 
 def run():
     parser = argparse.ArgumentParser(description="AI Influencer Autopilot Pipeline")
