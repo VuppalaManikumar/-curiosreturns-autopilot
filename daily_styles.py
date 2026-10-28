@@ -90,8 +90,8 @@ DAILY_SLOTS = [
     {
         "slot_id": "slot_2",
         "target_time": "09:00",
-        "name": "Commute Ignition",
-        "niche_bias": "dark_psychology"
+        "name": "Morning Global News Brief",
+        "niche_bias": "daily_news"
     },
     {
         "slot_id": "slot_3",
@@ -114,8 +114,8 @@ DAILY_SLOTS = [
     {
         "slot_id": "slot_6",
         "target_time": "16:00",
-        "name": "Afternoon Mind Glitch",
-        "niche_bias": "dark_psychology"
+        "name": "Afternoon Breaking Intelligence",
+        "niche_bias": "daily_news"
     },
     {
         "slot_id": "slot_7",
@@ -126,8 +126,8 @@ DAILY_SLOTS = [
     {
         "slot_id": "slot_8",
         "target_time": "19:30",
-        "name": "Prime Time AI Wave",
-        "niche_bias": "ai_glitches"
+        "name": "Prime Time Tech & World News",
+        "niche_bias": "daily_news"
     },
     {
         "slot_id": "slot_9",

@@ -2,6 +2,7 @@ import random
 import requests
 import json
 from config import get_config
+from news_engine import build_news_reel_script, fetch_trending_headlines
 
 # =========================================================================
 # SEAMLESS INFINITE LOOP SCRIPT VAULT (OUROBOROS ARCHITECTURE)
@@ -195,16 +196,25 @@ def generate_script_with_ai(niche: str, api_key: str):
 def get_next_script(preferred_niche="random"):
     gemini_key = get_config("GEMINI_API_KEY", "").strip()
     
-    available_niches = ["wealth_secrets", "ai_glitches", "dark_psychology", "mind_facts", "stoic_wisdom"]
+    available_niches = ["daily_news", "wealth_secrets", "ai_glitches", "dark_psychology", "mind_facts", "stoic_wisdom"]
     if preferred_niche == "random":
         niche = random.choices(
             available_niches,
-            weights=[30, 25, 20, 15, 10],
+            weights=[30, 20, 20, 15, 10, 5],
             k=1
         )[0]
     else:
         niche = preferred_niche
         
+    # Real-Time Daily Breaking News & Information
+    if niche == "daily_news":
+        print("[*] Fetching real-time breaking news headline for Daily News Reel...")
+        news_reel = build_news_reel_script()
+        if news_reel:
+            print(f"[*] Generated Real-Time News Reel: '{news_reel['title']}'")
+            print(f"    [LOOP CONNECTION]: \"{news_reel['loop_bridge']}\"")
+            return news_reel
+
     if gemini_key:
         print(f"[*] Generating seamless infinite loop AI script for '{niche}' via Gemini...")
         ai_script = generate_script_with_ai(niche, gemini_key)
@@ -221,5 +231,8 @@ def get_next_script(preferred_niche="random"):
     return chosen
 
 if __name__ == "__main__":
-    s = get_next_script("wealth_secrets")
-    print(json.dumps(s, indent=2))
+    s = get_next_script("daily_news")
+    print("\nGenerated Script:")
+    print("Title:", s.get("title"))
+    print("Script:", s.get("script"))
+    print("Loop Bridge:", s.get("loop_bridge"))
