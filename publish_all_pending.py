@@ -2,12 +2,20 @@ import os
 import sys
 import time
 from pathlib import Path
+
+# Safe standard output encoding on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 from config import OUTPUTS_DIR, get_config
 from meta_publisher import publish_video
 
 def publish_all_created_videos():
     print("=" * 68)
-    print("     BROADCASTING ALL CREATED REELS TO FACEBOOK & INSTAGRAM")
+    print("     BROADCASTING PENDING REELS TO FACEBOOK & INSTAGRAM")
     print("=" * 68)
     
     fb_token = get_config("FACEBOOK_ACCESS_TOKEN", "").strip()
@@ -20,14 +28,16 @@ def publish_all_created_videos():
         return
         
     mp4_files = sorted(OUTPUTS_DIR.glob("*.mp4"))
-    if not mp4_files:
-        print("[i] No video files found in CREATED_VIDEOS folder.")
+    pending_files = [v for v in mp4_files if not v.with_suffix(".published").exists()]
+    
+    if not pending_files:
+        print("[i] All rendered videos have already been published live!")
         return
         
-    print(f"[*] Found {len(mp4_files)} rendered video(s) ready for broadcast.\n")
+    print(f"[*] Found {len(pending_files)} pending video(s) ready for broadcast.\n")
     
     success_count = 0
-    for video in mp4_files:
+    for video in pending_files:
         caption_file = video.with_suffix(".caption.txt")
         caption_text = ""
         pinned_comment = ""
@@ -46,6 +56,8 @@ def publish_all_created_videos():
         posted_fb, posted_ig = publish_video(video, caption_text, pinned_comment)
         if posted_fb or posted_ig:
             success_count += 1
+            # Mark video as published so it is never re-uploaded
+            video.with_suffix(".published").write_text(f"fb={posted_fb}, ig={posted_ig}, time={time.time()}")
             print(f"[OK] Successfully uploaded: {video.name}")
             time.sleep(5)
         else:
@@ -53,7 +65,7 @@ def publish_all_created_videos():
             break
             
     print("\n" + "=" * 68)
-    print(f"   COMPLETED: {success_count}/{len(mp4_files)} videos broadcasted live!")
+    print(f"   COMPLETED: {success_count}/{len(pending_files)} pending videos broadcasted live!")
     print("=" * 68)
 
 if __name__ == "__main__":
