@@ -8,14 +8,8 @@ ASSETS_DIR = BASE_DIR / "assets"
 BACKGROUNDS_DIR = ASSETS_DIR / "backgrounds"
 AUDIO_DIR = ASSETS_DIR / "audio"
 
-# DIRECT DESKTOP AUTO FOLDER OUTPUT (Windows) or project outputs (Linux / Cloud)
-if sys.platform == "win32" and Path(r"C:\Users\manik\Desktop").exists():
-    DESKTOP_AUTO_DIR = Path(r"C:\Users\manik\Desktop\AUTO")
-    OUTPUTS_DIR = DESKTOP_AUTO_DIR / "CREATED_VIDEOS"
-else:
-    DESKTOP_AUTO_DIR = BASE_DIR / "outputs"
-    OUTPUTS_DIR = DESKTOP_AUTO_DIR
-
+# Internal outputs directory (Cloud / Backend runner only - never Desktop)
+OUTPUTS_DIR = BASE_DIR / "outputs"
 TEMP_DIR = BASE_DIR / "temp"
 
 # Create directories if not exist

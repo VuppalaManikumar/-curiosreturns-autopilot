@@ -67,8 +67,14 @@ def run_single_pipeline(preferred_niche="random", voice=None, highlight_color=No
     print("\n--- [Step 3/3] Delivering High-Conversion Marketing Content ---")
     posted_fb, posted_ig = publish_video(output_video, caption, pinned_comment)
     
-    # Clean up temp files
-    for temp_f in [audio_path, ass_path]:
+    # Clean up temp and local video files to ensure ZERO video clutter on PC
+    is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+    cleanup_files = [audio_path, ass_path]
+    if not is_github_actions:
+        # On local PC, delete video and caption files immediately after publish/attempt
+        cleanup_files.extend([output_video, output_video.with_suffix(".caption.txt")])
+        
+    for temp_f in cleanup_files:
         if temp_f.exists():
             try:
                 temp_f.unlink()
@@ -76,7 +82,9 @@ def run_single_pipeline(preferred_niche="random", voice=None, highlight_color=No
                 pass
                 
     elapsed = time.time() - start_time
-    print(f"[OK] Completed '{title}' in {elapsed:.1f}s -> {output_video.name}")
+    print(f"[OK] Completed '{title}' in {elapsed:.1f}s -> Published: FB={posted_fb}, IG={posted_ig}")
+    if not is_github_actions:
+        print("[i] Zero PC storage footprint: Local video files automatically removed.")
     return output_video, (posted_fb or posted_ig)
 
 def run():
@@ -110,14 +118,8 @@ def run():
             time.sleep(2)
             
     print("\n" + "=" * 68)
-    print(f"  ALL DONE! Successfully engineered {len(created_videos)} elite reel(s).")
-    print(f"  Folder: {OUTPUTS_DIR.resolve()}")
+    print(f"  ALL DONE! Successfully engineered and processed {len(created_videos)} reel(s).")
     print("=" * 68)
-    
-    try:
-        os.startfile(str(OUTPUTS_DIR.resolve()))
-    except Exception:
-        pass
 
 if __name__ == "__main__":
     run()
